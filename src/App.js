@@ -1,7 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { loadRobotsThunk } from "./redux/thunks/robotThunks";
+import { useEffect } from "react";
 
 function App() {
+  const robots = useSelector(({ robots }) => robots);
+  console.log(robots);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(loadRobotsThunk());
+  }, [dispatch]);
+
   return (
     <div className="App">
       <header className="App-header">
