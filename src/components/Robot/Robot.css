@@ -1,0 +1,25 @@
+.robot {
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    width: 50px;
+  }
+
+  &__features {
+  }
+  &__features-name {
+    font-size: 20px;
+  }
+}
+
+h2 {
+  font-size: 20px;
+  color: #000;
+}
+
+button {
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+}
