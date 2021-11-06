@@ -37,4 +37,16 @@ describe("Given a robotsReducer reducer", () => {
       expect(result).toEqual(robots);
     });
   });
+  describe("When it receives a robots list and an unknown action", () => {
+    test("Then it should return the received robots list", () => {
+      const initialRobots = [];
+      const action = {
+        type: "whatever",
+      };
+
+      const result = robotsReducer(initialRobots, action);
+
+      expect(result).toEqual(initialRobots);
+    });
+  });
 });
