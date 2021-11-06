@@ -1,13 +1,13 @@
-const Robot = () => {
+const Robot = ({ name, _id, image, speed, stamina, creationDate }) => {
   return (
     <article className="robot">
-      <h2>Name</h2>
-      <img className="robot__image" alt=""></img>
+      <h2>{name}</h2>
+      <img src={image} alt="robot" width="300" height="300"></img>
       <h3>Features</h3>
       <div className="robot__features">
-        <p className="robot__features-name">Speed</p>
-        <p className="robot__features-name">Stamina</p>
-        <p className="robot__features-name">creationDate</p>
+        <p className="robot__features-name">Speed: {speed}</p>
+        <p className="robot__features-name">Stamina: {stamina}</p>
+        <p className="robot__features-name">creationDate: {creationDate}</p>
       </div>
       <button className="button">UPDATE</button>
       <button className="button">DELETE</button>
