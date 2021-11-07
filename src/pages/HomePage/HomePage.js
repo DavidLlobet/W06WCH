@@ -1,10 +1,14 @@
+import Header from "../../components/Header/Header";
 import List from "../../components/List/List";
 
 const HomePage = () => {
   return (
-    <main className="main">
-      <List />
-    </main>
+    <>
+      <Header />
+      <main className="main">
+        <List />
+      </main>
+    </>
   );
 };
 

@@ -1,10 +1,14 @@
 import CreateForm from "../../components/CreateForm/CreateForm";
+import Header from "../../components/Header/Header";
 
 const CreateRobotPage = () => {
   return (
-    <main className="main">
-      <CreateForm />
-    </main>
+    <>
+      <Header />
+      <main className="main">
+        <CreateForm />
+      </main>
+    </>
   );
 };
 

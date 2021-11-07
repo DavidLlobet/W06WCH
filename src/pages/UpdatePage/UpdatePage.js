@@ -1,10 +1,14 @@
+import Header from "../../components/Header/Header";
 import UpdateForm from "../../components/UpdateForm/UpdateForm";
 
 const UpdateRobotPage = () => {
   return (
-    <main className="main">
-      <UpdateForm />
-    </main>
+    <>
+      <Header />
+      <main className="main">
+        <UpdateForm />
+      </main>
+    </>
   );
 };
 
