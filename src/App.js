@@ -5,7 +5,9 @@ import {
   Redirect,
 } from "react-router-dom";
 import "./App.css";
+import CreateRobotPage from "./pages/CreateRobotPage/CreateRobotPage";
 import HomePage from "./pages/HomePage/HomePage";
+import UpdateRobotPage from "./pages/UpdatePage/UpdatePage";
 import paths from "./paths/paths";
 
 function App() {
@@ -14,17 +16,17 @@ function App() {
       {/* <pre>{JSON.stringify(robots, null, 2)}</pre> */}
       <Router>
         <Switch>
-          <Route path={paths.robots} exact>
+          <Route path={paths.homePage} exact>
             <HomePage />
           </Route>
-          {/* <Route path={paths.robots / create} exact>
-            <Create />
+          <Route path={paths.createRobot} exact>
+            <CreateRobotPage />
           </Route>
-          <Route path={paths.robots / update} exact>
-            <Update />
-          </Route> */}
+          <Route path={paths.updateRobot} exact>
+            <UpdateRobotPage />
+          </Route>
           <Route path="/" exact>
-            <Redirect to={paths.robots} />
+            <Redirect to={paths.homePage} />
           </Route>
         </Switch>
       </Router>
