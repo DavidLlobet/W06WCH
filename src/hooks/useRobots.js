@@ -5,6 +5,7 @@ import { loadRobotsThunk } from "../redux/thunks/robotThunks";
 const useRobots = () => {
   const robots = useSelector(({ robots }) => robots);
   const dispatch = useDispatch();
+
   const loadRobots = useCallback(() => {
     dispatch(loadRobotsThunk());
   }, [dispatch]);

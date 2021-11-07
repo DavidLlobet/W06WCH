@@ -6,6 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import "./App.css";
+import Header from "./components/Header/Header";
 import useRobots from "./hooks/useRobots";
 import CreateRobotPage from "./pages/CreateRobotPage/CreateRobotPage";
 import HomePage from "./pages/HomePage/HomePage";
@@ -21,6 +22,7 @@ function App() {
   return (
     <div className="container">
       <Router>
+        <Header />
         <Switch>
           <Route path={paths.homePage} exact>
             <HomePage />
