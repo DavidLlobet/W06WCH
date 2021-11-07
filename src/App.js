@@ -1,5 +1,12 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import "./App.css";
+import HomePage from "./pages/HomePage/HomePage";
+import paths from "./paths/paths";
 
 function App() {
   return (
@@ -10,11 +17,14 @@ function App() {
           <Route path={paths.robots} exact>
             <HomePage />
           </Route>
-          <Route path={paths.robots / create} exact>
+          {/* <Route path={paths.robots / create} exact>
             <Create />
           </Route>
           <Route path={paths.robots / update} exact>
             <Update />
+          </Route> */}
+          <Route path="/" exact>
+            <Redirect to={paths.robots} />
           </Route>
         </Switch>
       </Router>
