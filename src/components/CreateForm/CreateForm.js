@@ -1,5 +1,3 @@
-import Robot from "../Robot/Robot";
-
 const CreateForm = () => {
   const handlerSubmit = (event) => {
     event.preventDefault();
