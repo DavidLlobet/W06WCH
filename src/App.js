@@ -1,12 +1,23 @@
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-
-import List from "./components/List/List";
 
 function App() {
   return (
     <div className="container">
       {/* <pre>{JSON.stringify(robots, null, 2)}</pre> */}
-      <List />
+      <Router>
+        <Switch>
+          <Route path={paths.robots} exact>
+            <HomePage />
+          </Route>
+          <Route path={paths.robots / create} exact>
+            <Create />
+          </Route>
+          <Route path={paths.robots / update} exact>
+            <Update />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
