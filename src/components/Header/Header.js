@@ -2,14 +2,14 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="header">
-      <NavLink to="/robots" exact>
+    <header className="d-flex justify-content-center py-3">
+      <NavLink className="nav-link" to="/robots" exact>
         HOME
       </NavLink>
-      <NavLink to="/robots/create" exact>
+      <NavLink className="nav-link" to="/robots/create" exact>
         CREATE ROBOT
       </NavLink>
-      <NavLink to="/robots/update" exact>
+      <NavLink className="nav-link" to="/robots/update" exact>
         UPDATE ROBOT
       </NavLink>
     </header>

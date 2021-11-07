@@ -9,8 +9,8 @@ const List = () => {
   };
   return (
     <>
-      <ul className="robots-list">
-        <h2>My Robots:</h2>
+      <h2>My Robots:</h2>
+      <ul className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         {robots.map((robot) => (
           <Robot
             key={robot._id}
