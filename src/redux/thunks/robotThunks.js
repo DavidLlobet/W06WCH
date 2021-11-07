@@ -1,4 +1,8 @@
-import { deleteRobotAction, loadRobotsAction } from "../actions/actionCreators";
+import {
+  deleteRobotAction,
+  loadRobotsAction,
+  createRobotAction,
+} from "../actions/actionCreators";
 
 export const loadRobotsThunk = () => {
   return async (dispatch) => {
@@ -21,5 +25,22 @@ export const deleteRobotThunk = (idRobot) => {
     );
     await response.json();
     dispatch(deleteRobotAction(idRobot));
+  };
+};
+
+export const createRobotThunk = (robot) => {
+  return async (dispatch) => {
+    const response = await fetch(
+      "https://robots2.herokuapp.com/robots/create",
+      {
+        method: "POST",
+        body: JSON.stringify(robot),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const newRobot = await response.json();
+    dispatch(createRobotAction(newRobot));
   };
 };
