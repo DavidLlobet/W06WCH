@@ -3,11 +3,9 @@ import Robot from "../Robot/Robot";
 
 const List = () => {
   const { robots } = useRobots();
-  console.log(robots);
 
   return (
     <>
-      <pre>{JSON.stringify(robots, null, 2)}</pre>
       <ul className="robots-list">
         <h2>My Robots:</h2>
         {robots.map((robot) => (

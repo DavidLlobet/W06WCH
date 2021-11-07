@@ -20,7 +20,6 @@ function App() {
 
   return (
     <div className="container">
-      {/* <pre>{JSON.stringify(robots, null, 2)}</pre> */}
       <Router>
         <Switch>
           <Route path={paths.homePage} exact>
