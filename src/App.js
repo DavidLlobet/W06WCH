@@ -7,6 +7,7 @@ import {
 import "./App.css";
 import CreateRobotPage from "./pages/CreateRobotPage/CreateRobotPage";
 import HomePage from "./pages/HomePage/HomePage";
+import UpdateRobotPage from "./pages/UpdatePage/UpdatePage";
 import paths from "./paths/paths";
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
             <CreateRobotPage />
           </Route>
           <Route path={paths.updateRobot} exact>
-            <Update />
+            <UpdateRobotPage />
           </Route>
           <Route path="/" exact>
             <Redirect to={paths.homePage} />
