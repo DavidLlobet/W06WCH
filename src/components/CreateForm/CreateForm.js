@@ -49,7 +49,6 @@ const CreateForm = () => {
         required
         className="form-range"
         onChange={() => {}}
-        required
       ></input>
       <p>Creation date:</p>
       <input
