@@ -5,7 +5,7 @@ const UpdateForm = () => {
 
   return (
     <form
-      className="form"
+      className="form_create container-sm"
       autoComplete="off"
       noValidate
       onSubmit={handlerSubmit}
@@ -13,7 +13,7 @@ const UpdateForm = () => {
       <p>Name:</p>
       <input
         type="text"
-        className="form__control"
+        className="form-control"
         placeholder="Write here"
         onChange={() => {}}
         required
@@ -21,31 +21,39 @@ const UpdateForm = () => {
       <p>Image url:</p>
       <input
         type="text"
-        className="form__control"
+        className="form-control"
         placeholder="Write here"
         onChange={() => {}}
         required
       ></input>
       <p>Speed:</p>
       <input
-        type="text"
-        className="form__control"
-        placeholder="Write here"
+        type="range"
+        min="0"
+        max="10"
+        id="speed"
+        placeholder="Speed"
+        name="speed"
+        className="form-range"
         onChange={() => {}}
         required
       ></input>
       <p>Stamina:</p>
       <input
-        type="text"
-        className="form__control"
-        placeholder="Write here"
+        type="range"
+        min="0"
+        max="10"
+        id="stamina"
+        placeholder="Stamina"
+        name="stamina"
+        className="form-range"
         onChange={() => {}}
         required
       ></input>
       <p>Creation date:</p>
       <input
         type="text"
-        className="form__control"
+        className="form-control"
         placeholder="Write here"
         onChange={() => {}}
         required
