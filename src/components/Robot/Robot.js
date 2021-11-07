@@ -1,4 +1,12 @@
-const Robot = ({ name, _id, image, speed, stamina, creationDate }) => {
+const Robot = ({
+  name,
+  _id,
+  image,
+  speed,
+  stamina,
+  creationDate,
+  onDeleteClick,
+}) => {
   return (
     <article className="robot">
       <h2>{name}</h2>
@@ -10,7 +18,9 @@ const Robot = ({ name, _id, image, speed, stamina, creationDate }) => {
         <p className="robot__features-name">creationDate: {creationDate}</p>
       </div>
       <button className="button">UPDATE</button>
-      <button className="button">DELETE</button>
+      <button className="button" onClick={() => onDeleteClick(_id)}>
+        DELETE
+      </button>
     </article>
   );
 };

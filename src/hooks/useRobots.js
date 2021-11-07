@@ -10,9 +10,9 @@ const useRobots = () => {
     dispatch(loadRobotsThunk());
   }, [dispatch]);
 
-  const deleteRobot = useCallback(() => {
-    dispatch(deleteRobotThunk());
-  }, [dispatch]);
+  const deleteRobot = (idRobot) => {
+    dispatch(deleteRobotThunk(idRobot));
+  };
 
   return { robots, dispatch, loadRobots, deleteRobot };
 };

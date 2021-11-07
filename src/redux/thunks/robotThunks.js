@@ -8,10 +8,18 @@ export const loadRobotsThunk = () => {
   };
 };
 
-export const deleteRobotThunk = (id) => {
+export const deleteRobotThunk = (idRobot) => {
   return async (dispatch) => {
-    const response = await fetch(`https://robots2.herokuapp.com/robots/${id}`);
-    const deletedRobot = await response.json();
-    dispatch(deleteRobotAction(deletedRobot));
+    const response = await fetch(
+      `https://robots2.herokuapp.com/robots/delete/${idRobot}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    await response.json();
+    dispatch(deleteRobotAction(idRobot));
   };
 };
