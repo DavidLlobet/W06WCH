@@ -1,10 +1,11 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 import { userLoginAction } from "../actions/actionCreators";
+import { usersPaths } from "../../paths/paths";
 
 export const loginUserThunk = (user) => async (dispatch) => {
   const response = await axios.post(
-    process.env.REACT_APP_URL + user.Paths.login,
+    process.env.REACT_APP_URL + usersPaths.login,
     user
   );
   if (response.status === 200) {
