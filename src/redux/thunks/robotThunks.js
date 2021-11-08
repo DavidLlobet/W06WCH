@@ -1,15 +1,14 @@
+import axios from "axios";
 import {
   deleteRobotAction,
   loadRobotsAction,
   createRobotAction,
 } from "../actions/actionCreators";
 
-export const loadRobotsThunk = () => {
-  return async (dispatch) => {
-    const response = await fetch("https://robots2.herokuapp.com/robots");
-    const robots = await response.json();
-    dispatch(loadRobotsAction(robots));
-  };
+export const loadRobotsThunk = () => async (dispatch) => {
+  const {token} = JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_KEY))
+  const response = await axios.get(url, headers: {Authorization: "Bearer " + token})
+  dispatch(loadRobotsAction(response.data))  
 };
 
 export const deleteRobotThunk = (idRobot) => {
