@@ -6,9 +6,13 @@ import {
 } from "../actions/actionCreators";
 
 export const loadRobotsThunk = () => async (dispatch) => {
-  const {token} = JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_KEY))
-  const response = await axios.get(url, headers: {Authorization: "Bearer " + token})
-  dispatch(loadRobotsAction(response.data))  
+  const { token } = JSON.stringify(
+    localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_KEY)
+  );
+  const robots = await axios.get(process.env.REACT_APP_URL + robotPaths.get, {
+    headers: { Authorization: "Bearer " + token },
+  });
+  dispatch(loadRobotsAction(robots.data));
 };
 
 export const deleteRobotThunk = (idRobot) => {
