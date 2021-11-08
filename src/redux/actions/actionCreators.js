@@ -14,3 +14,8 @@ export const createRobotAction = (robot) => ({
   type: actionTypes.createRobot,
   robot,
 });
+
+export const userLogin = (user) => ({
+  type: actionTypes.userLogin,
+  user,
+});
