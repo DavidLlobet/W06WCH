@@ -1,7 +1,9 @@
-const paths = {
+export const paths = {
   homePage: "/robots",
   createRobot: "/robots/create",
   updateRobot: "/robots/update",
 };
 
-export default paths;
+export const usersPaths = {
+  login: "/users/login",
+};

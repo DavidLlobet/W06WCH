@@ -1,20 +1,17 @@
 import { useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
 import useRobots from "./hooks/useRobots";
 import CreateRobotPage from "./pages/CreateRobotPage/CreateRobotPage";
 import HomePage from "./pages/HomePage/HomePage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 import UpdateRobotPage from "./pages/UpdatePage/UpdatePage";
-import paths from "./paths/paths";
+import { paths, usersPaths } from "./paths/paths";
 
 function App() {
   const { loadRobots } = useRobots();
+
   useEffect(() => {
     loadRobots();
   }, [loadRobots]);
@@ -33,8 +30,8 @@ function App() {
           <Route path={paths.updateRobot} exact>
             <UpdateRobotPage />
           </Route>
-          <Route path="/" exact>
-            <Redirect to={paths.homePage} />
+          <Route path={usersPaths.login} exact>
+            <LoginPage />
           </Route>
         </Switch>
       </Router>

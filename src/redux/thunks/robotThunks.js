@@ -4,12 +4,25 @@ import {
   createRobotAction,
 } from "../actions/actionCreators";
 
-export const loadRobotsThunk = () => {
-  return async (dispatch) => {
-    const response = await fetch("https://robots2.herokuapp.com/robots");
-    const robots = await response.json();
-    dispatch(loadRobotsAction(robots));
-  };
+const urlApi = "https://robots2.herokuapp.com/robots";
+
+export const loadRobotsThunk = () => async (dispatch) => {
+  const token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODkzMGZmYzExYjc4NjcwYWFjN2IyYSIsIm5hbWUiOiJMdWlzIiwiaWF0IjoxNjM2NDg4Mzc3LCJleHAiOjE2MzY1NzQ3Nzd9.iTYid9Gxd5_pwVL5KpcyZR6aD4_fGMxJwI3aGt4LLsk";
+  /* const token = JSON.parse(
+    localStorage.getItem(process.env.REACT_APP_LOCAL_STORAGE)
+  ); */
+
+  const response = await fetch(urlApi, {
+    method: "GET",
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  });
+  debugger;
+  const robots = await response.json();
+
+  dispatch(loadRobotsAction(robots));
 };
 
 export const deleteRobotThunk = (idRobot) => {
