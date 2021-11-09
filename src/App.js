@@ -10,6 +10,7 @@ import Header from "./components/Header/Header";
 import useRobots from "./hooks/useRobots";
 import CreateRobotPage from "./pages/CreateRobotPage/CreateRobotPage";
 import HomePage from "./pages/HomePage/HomePage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 import UpdateRobotPage from "./pages/UpdatePage/UpdatePage";
 import { paths, usersPaths } from "./paths/paths";
 
@@ -35,7 +36,7 @@ function App() {
             <UpdateRobotPage />
           </Route>
           <Route path={usersPaths.login} exact>
-            <LoginForm />
+            <LoginPage />
           </Route>
         </Switch>
       </Router>

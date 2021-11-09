@@ -12,6 +12,9 @@ const Header = () => {
       <NavLink className="nav-link" to="/robots/update" exact>
         UPDATE ROBOT
       </NavLink>
+      <NavLink className="nav-link" to="/users/login" exact>
+        LOGIN
+      </NavLink>
     </header>
   );
 };

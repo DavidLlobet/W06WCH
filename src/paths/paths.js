@@ -5,5 +5,5 @@ export const paths = {
 };
 
 export const usersPaths = {
-  login: "users/login",
+  login: "/users/login",
 };
