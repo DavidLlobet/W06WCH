@@ -11,10 +11,11 @@ import useRobots from "./hooks/useRobots";
 import CreateRobotPage from "./pages/CreateRobotPage/CreateRobotPage";
 import HomePage from "./pages/HomePage/HomePage";
 import UpdateRobotPage from "./pages/UpdatePage/UpdatePage";
-import paths from "./paths/paths";
+import { paths, usersPaths } from "./paths/paths";
 
 function App() {
   const { loadRobots } = useRobots();
+
   useEffect(() => {
     loadRobots();
   }, [loadRobots]);
@@ -33,8 +34,8 @@ function App() {
           <Route path={paths.updateRobot} exact>
             <UpdateRobotPage />
           </Route>
-          <Route path="/" exact>
-            <Redirect to={paths.homePage} />
+          <Route path={usersPaths.login} exact>
+            <LoginForm />
           </Route>
         </Switch>
       </Router>
