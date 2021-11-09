@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import { loginUserThunk } from "../../redux/thunks/userThunks";
 
 const LoginForm = () => {
@@ -11,7 +12,8 @@ const LoginForm = () => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    dispatchEvent(loginUserThunk(userData));
+    debugger;
+    loginUserThunk(userData);
   };
 
   const changeUserData = (event) => {

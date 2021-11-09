@@ -7,13 +7,19 @@ import {
 const urlApi = "https://robots2.herokuapp.com/robots";
 
 export const loadRobotsThunk = () => async (dispatch) => {
+  const token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODkzMGZmYzExYjc4NjcwYWFjN2IyYSIsIm5hbWUiOiJMdWlzIiwiaWF0IjoxNjM2NDg4Mzc3LCJleHAiOjE2MzY1NzQ3Nzd9.iTYid9Gxd5_pwVL5KpcyZR6aD4_fGMxJwI3aGt4LLsk";
+  /* const token = JSON.parse(
+    localStorage.getItem(process.env.REACT_APP_LOCAL_STORAGE)
+  ); */
+
   const response = await fetch(urlApi, {
     method: "GET",
     headers: {
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODkzMGZmYzExYjc4NjcwYWFjN2IyYSIsIm5hbWUiOiJMdWlzIiwiaWF0IjoxNjM2MzkzMzA2LCJleHAiOjE2MzY0Nzk3MDZ9.lWBAESbGPF0M7wA2936il6bA7CbW54pPBnZz1djkqSs",
+      Authorization: "Bearer " + token,
     },
   });
+  debugger;
   const robots = await response.json();
 
   dispatch(loadRobotsAction(robots));
