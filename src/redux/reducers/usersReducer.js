@@ -16,11 +16,16 @@ const userReducer = (
         user: action.user,
       };
       break;
+    case action.Types.logoutUser:
+      newUser = {
+        isAuthenticated: false,
+        user: {},
+      };
+      break;
     default:
       newUser = user;
   }
-  return;
-  newUser;
+  return newUser;
 };
 
 export default userReducer;

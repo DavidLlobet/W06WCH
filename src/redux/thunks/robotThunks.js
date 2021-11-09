@@ -1,18 +1,22 @@
-import axios from "axios";
 import {
   deleteRobotAction,
   loadRobotsAction,
   createRobotAction,
 } from "../actions/actionCreators";
 
+const urlApi = "https://robots2.herokuapp.com/robots";
+
 export const loadRobotsThunk = () => async (dispatch) => {
-  const { token } = JSON.stringify(
-    localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_KEY)
-  );
-  const robots = await axios.get(process.env.REACT_APP_URL + robotPaths.get, {
-    headers: { Authorization: "Bearer " + token },
+  const response = await fetch(urlApi, {
+    method: "GET",
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODkzMGZmYzExYjc4NjcwYWFjN2IyYSIsIm5hbWUiOiJMdWlzIiwiaWF0IjoxNjM2MzkzMzA2LCJleHAiOjE2MzY0Nzk3MDZ9.lWBAESbGPF0M7wA2936il6bA7CbW54pPBnZz1djkqSs",
+    },
   });
-  dispatch(loadRobotsAction(robots.data));
+  const robots = await response.json();
+
+  dispatch(loadRobotsAction(robots));
 };
 
 export const deleteRobotThunk = (idRobot) => {
